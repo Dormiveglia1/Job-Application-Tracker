@@ -7,8 +7,23 @@ import dashboardRoutes from "./routes/dashboardRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const allowedOrigins = (process.env.CLIENT_ORIGIN || "")
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 
-app.use(cors());
+app.use(
+  cors({
+    origin(origin, callback) {
+      if (!origin || allowedOrigins.length === 0 || allowedOrigins.includes(origin)) {
+        callback(null, true);
+        return;
+      }
+
+      callback(new Error("Origin is not allowed by CORS."));
+    },
+  }),
+);
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
@@ -34,7 +49,7 @@ app.get("/api/health/database", async (request, response) => {
       connected: rows[0].database_connected === 1,
     });
   } catch (error) {
-    console.error("Database connection failed:", error.message);
+    console.error("Database connection failed:", error);
 
     response.status(500).json({
       message: "Database connection failed",

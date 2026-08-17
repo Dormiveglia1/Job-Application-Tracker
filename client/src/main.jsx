@@ -6,12 +6,12 @@ import "./styles/forms.css";
 import "./styles/dashboard.css";
 import "./styles/applications.css";
 import App from "./App.jsx";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </StrictMode>,
 );
