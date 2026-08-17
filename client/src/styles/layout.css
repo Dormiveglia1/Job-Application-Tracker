@@ -192,20 +192,29 @@
     flex-direction: column;
   }
   .sidebar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 16px;
     width: auto;
     padding: 16px 20px;
     border-right: 0;
     border-bottom: 1px solid #e2e8f0;
   }
   .brand {
+    white-space: nowrap;
     margin-bottom: 16px;
   }
   .sidebar nav {
     display: flex;
+    justify-content: center;
   }
   .sidebar-footer {
-    width: fit-content;
-    margin-top: 16px;
+    width: auto;
+    margin-top: 0;
+  }
+  .current-user {
+    display: none;
   }
   .page-content {
     padding: 24px 20px;
@@ -217,6 +226,27 @@
     flex-direction: column;
   }
   .page-header .secondary-button {
+    width: 100%;
+  }
+  .sidebar {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .brand {
+    margin-bottom: 0;
+  }
+  .sidebar nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+  .nav-link {
+    white-space: nowrap;
+  }
+  .sidebar-footer {
+    display: flex;
+    align-items: center;
+  }
+  .topbar .primary-button {
     width: 100%;
   }
 }

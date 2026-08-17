@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import StatCard from "../components/StatCard";
 import { apiRequest } from "../services/api";
 import { Link } from "react-router-dom";
+import MonthlyTrendChart from "../components/MonthlyTrendChart";
 import "../App.css";
 import AppSidebar from "../components/AppSidebar";
 
@@ -74,11 +75,6 @@ function DashboardPage() {
     { value: "withdrawn", label: "Withdrawn" },
     { value: "archived", label: "Archived" },
   ];
-
-  const maxMonthlyCount = Math.max(
-    ...monthlyApplications.map((item) => Number(item.count)),
-    1,
-  );
 
   const maxCategoryCount = Math.max(
     ...categoryDistribution.map((item) => Number(item.count)),
@@ -172,26 +168,7 @@ function DashboardPage() {
                 {monthlyApplications.length === 0 ? (
                   <p className="empty-insight">No application data yet.</p>
                 ) : (
-                  <div className="bar-chart">
-                    {monthlyApplications.map((item) => (
-                      <div className="bar-chart-row" key={item.month}>
-                        <span className="bar-chart-label">{item.month}</span>
-
-                        <div className="bar-chart-track">
-                          <span
-                            className="bar-chart-fill"
-                            style={{
-                              width: `${
-                                (Number(item.count) / maxMonthlyCount) * 100
-                              }%`,
-                            }}
-                          />
-                        </div>
-
-                        <strong>{item.count}</strong>
-                      </div>
-                    ))}
-                  </div>
+                  <MonthlyTrendChart data={monthlyApplications} />
                 )}
               </article>
 

@@ -152,3 +152,14 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 640px) {
+  .table-wrapper {
+    border-radius: 10px;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 14px 16px;
+  }
+}

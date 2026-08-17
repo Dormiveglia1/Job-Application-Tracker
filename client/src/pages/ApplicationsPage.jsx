@@ -20,6 +20,7 @@ function ApplicationsPage() {
   const [page, setPage] = useState(1);
   const [reloadKey, setReloadKey] = useState(0);
   const [includeArchived, setIncludeArchived] = useState(false);
+  const [areFiltersOpen, setAreFiltersOpen] = useState(false);
 
   const [pendingInterview, setPendingInterview] = useState(null);
   const [interviewDate, setInterviewDate] = useState("");
@@ -94,6 +95,7 @@ function ApplicationsPage() {
     setOrder("desc");
     setIncludeArchived(false);
     setPage(1);
+    setAreFiltersOpen(false);
   }
 
   async function handleDelete(application) {
@@ -252,7 +254,21 @@ function ApplicationsPage() {
                 />
               </label>
 
-              <label className="filter-field">
+              <button
+                type="button"
+                className="filter-toggle-button"
+                aria-expanded={areFiltersOpen}
+                aria-controls="advanced-application-filters"
+                onClick={() => setAreFiltersOpen((isOpen) => !isOpen)}
+              >
+                {areFiltersOpen ? "Hide filters" : "Filters"}
+              </button>
+
+              <div
+                id="advanced-application-filters"
+                className={`filter-options${areFiltersOpen ? " is-open" : ""}`}
+              >
+                <label className="filter-field">
                 Status
                 <select
                   value={status}
@@ -269,9 +285,9 @@ function ApplicationsPage() {
                   <option value="withdrawn">Withdrawn</option>
                   <option value="archived">Archived</option>
                 </select>
-              </label>
+                </label>
 
-              <label className="filter-field">
+                <label className="filter-field">
                 Category
                 <input
                   value={category}
@@ -281,9 +297,9 @@ function ApplicationsPage() {
                   }}
                   placeholder="Frontend"
                 />
-              </label>
+                </label>
 
-              <label className="filter-field">
+                <label className="filter-field">
                 Sort by
                 <select
                   value={sortBy}
@@ -293,9 +309,9 @@ function ApplicationsPage() {
                   <option value="createdAt">Created date</option>
                   <option value="company">Company</option>
                 </select>
-              </label>
+                </label>
 
-              <label className="filter-field">
+                <label className="filter-field">
                 Order
                 <select
                   value={order}
@@ -304,9 +320,9 @@ function ApplicationsPage() {
                   <option value="desc">Descending</option>
                   <option value="asc">Ascending</option>
                 </select>
-              </label>
+                </label>
 
-              <label className="archive-filter">
+                <label className="archive-filter">
                 <input
                   type="checkbox"
                   checked={includeArchived}
@@ -316,15 +332,16 @@ function ApplicationsPage() {
                   }}
                 />
                 Include archived
-              </label>
+                </label>
 
-              <button
+                <button
                 type="button"
                 className="reset-filters-button"
                 onClick={resetFilters}
               >
                 Reset filters
-              </button>
+                </button>
+              </div>
             </section>
 
             {errorMessage && (

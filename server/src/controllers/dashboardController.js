@@ -53,7 +53,7 @@ export async function getDashboardSummary(request, response) {
       database.execute(
         `SELECT
           COUNT(*) AS totalApplications,
-          SUM(interview_date IS NOT NULL) AS interviewedApplications
+          SUM(status IN ('interview', 'offer')) AS interviewedApplications
          FROM applications
          WHERE user_id = ? AND status != 'archived'`,
         [userId],

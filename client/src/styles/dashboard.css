@@ -86,6 +86,46 @@
   font-size: 0.875rem;
   text-align: right;
 }
+.trend-chart {
+  width: 100%;
+  overflow-x: auto;
+}
+.trend-chart svg {
+  display: block;
+  width: 100%;
+  min-width: 420px;
+  overflow: visible;
+}
+.trend-grid-line {
+  stroke: #e2e8f0;
+  stroke-width: 1;
+}
+.trend-area {
+  fill: rgb(37 99 235 / 12%);
+}
+.trend-line {
+  fill: none;
+  stroke: #2563eb;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+}
+.trend-point {
+  fill: #ffffff;
+  stroke: #2563eb;
+  stroke-width: 3;
+}
+.trend-axis-label,
+.trend-value {
+  fill: #64748b;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-size: 12px;
+}
+.trend-value {
+  fill: #0f172a;
+  font-weight: 700;
+  text-anchor: middle;
+}
 .status-summary {
   grid-column: 1 / -1;
 }
@@ -154,5 +194,13 @@
 @media (max-width: 520px) {
   .stat-grid {
     grid-template-columns: 1fr;
+  }
+  .dashboard {
+    padding-top: 28px;
+  }
+  .stat-card,
+  .insight-card,
+  .next-interview-card {
+    padding: 20px;
   }
 }

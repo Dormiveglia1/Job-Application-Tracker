@@ -34,7 +34,26 @@ The frontend is automatically built and deployed to GitHub Pages through GitHub 
 - Archive and restore records separately from workflow status
 - Search, filter, sort, paginate, and optionally include archived applications
 - Open job postings directly from the application list
-- Dashboard metrics for application volume, interviews, offers, interview rate, monthly trends, category distribution, status counts, and the next upcoming interview
+- Dashboard metrics for application volume, interviews, offers, interview rate (applications at Interview or Offer stage), monthly trends, category distribution, status counts, and the next upcoming interview
+- Responsive layouts for desktop, tablet, and mobile screens
+
+## Demo Walkthrough
+
+1. Register a new account or sign in.
+2. Create job applications with their category, source, status, and job-posting link.
+3. Use the Applications page to search, filter, sort, edit, archive, restore, or delete records.
+4. Change a record to **Interview** and select its next interview date and time.
+5. Return to the Dashboard to review the line chart for monthly applications, category distribution, status totals, interview rate, and next interview card.
+
+## Screenshots
+
+Add final product screenshots to `docs/screenshots/` using the filenames below. They will render automatically in this README after they are committed.
+
+| Screen | Suggested filename |
+| --- | --- |
+| Dashboard with populated chart data | `docs/screenshots/dashboard.png` |
+| Applications table and filters | `docs/screenshots/applications.png` |
+| Add or edit application form | `docs/screenshots/application-form.png` |
 
 ## Tech Stack
 

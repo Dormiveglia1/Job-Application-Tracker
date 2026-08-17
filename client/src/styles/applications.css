@@ -25,6 +25,12 @@
   gap: 12px;
   margin-bottom: 20px;
 }
+.filter-options {
+  display: contents;
+}
+.filter-toggle-button {
+  display: none;
+}
 .filter-field {
   display: grid;
   gap: 6px;
@@ -95,6 +101,30 @@
 @media (max-width: 640px) {
   .application-filters {
     grid-template-columns: 1fr;
+  }
+  .filter-toggle-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #334155;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  .filter-toggle-button:hover {
+    border-color: #1d4ed8;
+    color: #1d4ed8;
+  }
+  .filter-options {
+    display: none;
+  }
+  .filter-options.is-open {
+    display: grid;
+    gap: 12px;
   }
   .pagination-controls {
     justify-content: space-between;
