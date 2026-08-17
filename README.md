@@ -4,6 +4,26 @@ CareerFlow is a full-stack web application for organizing job applications, trac
 
 It supports secure account-based data isolation, application lifecycle management, interview scheduling, archive management, and dashboard analytics.
 
+## Live Demo
+
+- [Open CareerFlow](https://dormiveglia1.github.io/Job-Application-Tracker/)
+- [API health check](https://job-application-tracker-production-b1e5.up.railway.app/api/health)
+- [Database health check](https://job-application-tracker-production-b1e5.up.railway.app/api/health/database)
+
+## Deployment Architecture
+
+```text
+GitHub Pages (React + Vite)
+          │ HTTPS
+          ▼
+Railway (Node.js + Express API)
+          │ Private service network
+          ▼
+Railway MySQL
+```
+
+The frontend is automatically built and deployed to GitHub Pages through GitHub Actions whenever changes are pushed to `main`. The Express API and MySQL database are deployed on Railway, so the application does not depend on a local machine running a server or database.
+
 ## Features
 
 - JWT-based registration, login, protected routes, and sign out
@@ -79,6 +99,7 @@ DB_NAME=careerflow
 DB_USER=root
 DB_PASSWORD=your-local-password
 JWT_SECRET=use-a-long-random-secret
+CLIENT_ORIGIN=http://localhost:5173
 ```
 
 Start the API:
@@ -159,8 +180,7 @@ npm start
 
 ## Future Improvements
 
-- Deploy the frontend and API to cloud hosting
-- Host MySQL in a managed cloud database
 - Add automated API and component tests
 - Add file attachments and interview history
 - Add charts with selectable date ranges
+- Add a custom domain and production monitoring
