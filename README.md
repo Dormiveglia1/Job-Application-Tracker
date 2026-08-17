@@ -47,13 +47,17 @@ The frontend is automatically built and deployed to GitHub Pages through GitHub 
 
 ## Screenshots
 
-Add final product screenshots to `docs/screenshots/` using the filenames below. They will render automatically in this README after they are committed.
+### Dashboard
 
-| Screen | Suggested filename |
-| --- | --- |
-| Dashboard with populated chart data | `docs/screenshots/dashboard.png` |
-| Applications table and filters | `docs/screenshots/applications.png` |
-| Add or edit application form | `docs/screenshots/application-form.png` |
+![CareerFlow dashboard](docs/screenshots/dashboard.png)
+
+### Applications
+
+![CareerFlow applications page](docs/screenshots/applications.png)
+
+### Application form
+
+![CareerFlow application form](docs/screenshots/application-form.png)
 
 ## Tech Stack
 
