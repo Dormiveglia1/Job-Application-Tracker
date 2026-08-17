@@ -1,0 +1,154 @@
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.data-table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.data-table th {
+  color: #64748b;
+  background: #f8fafc;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.data-table td {
+  color: #334155;
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.data-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.job-link {
+  color: #2563eb;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.job-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.table-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  white-space: nowrap;
+}
+
+.table-action-link,
+.table-archive-button,
+.table-restore-button,
+.table-delete-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.table-action-link {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.table-action-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.table-delete-button {
+  color: #dc2626;
+}
+
+.table-delete-button:hover {
+  color: #b91c1c;
+  text-decoration: underline;
+}
+
+.table-archive-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #64748b;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.table-archive-button:hover {
+  color: #334155;
+  text-decoration: underline;
+}
+
+.table-restore-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #15803d;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.table-restore-button:hover {
+  color: #166534;
+  text-decoration: underline;
+}
+
+.status-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-control select {
+  min-width: 108px;
+  padding: 6px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #334155;
+  font: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.status-control select:focus {
+  border-color: #1d4ed8;
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(29 78 216 / 12%);
+}
+
+@media (max-width: 900px) {
+  .status-control {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

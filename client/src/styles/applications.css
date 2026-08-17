@@ -1,0 +1,109 @@
+/* Applications page heading, filters, and pagination */
+.recent-applications {
+  margin-top: 40px;
+}
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+.section-heading h2 {
+  margin: 0 0 6px;
+  color: #0f172a;
+  font-size: 1.25rem;
+}
+.section-heading p {
+  margin: 0;
+  color: #64748b;
+}
+.application-filters {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, minmax(120px, 1fr)) auto auto;
+  align-items: end;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.filter-field {
+  display: grid;
+  gap: 6px;
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.filter-field input,
+.filter-field select {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #0f172a;
+}
+.archive-filter {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  gap: 8px;
+  color: #475569;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.archive-filter input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: #1d4ed8;
+}
+.reset-filters-button,
+.pagination-controls button {
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #334155;
+  cursor: pointer;
+  font-weight: 700;
+}
+.reset-filters-button:hover,
+.pagination-controls button:hover:not(:disabled) {
+  border-color: #1d4ed8;
+  color: #1d4ed8;
+}
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 20px;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+.pagination-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+@media (max-width: 1100px) {
+  .application-filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .application-filters {
+    grid-template-columns: 1fr;
+  }
+  .pagination-controls {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 520px) {
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
