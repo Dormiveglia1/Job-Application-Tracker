@@ -37,6 +37,14 @@ function DashboardPage() {
     0,
   );
 
+  const interviewStageApplications =
+    Number(statusCounts.interview || 0) + Number(statusCounts.offer || 0);
+
+  const interviewRate =
+    totalApplications === 0
+      ? 0
+      : Math.round((interviewStageApplications / totalApplications) * 100);
+
   const dashboardStats = [
     {
       label: "Total applications",
@@ -52,7 +60,7 @@ function DashboardPage() {
     },
     {
       label: "Interview rate",
-      value: `${summary?.interviewRate || 0}%`,
+      value: `${interviewRate}%`,
     },
   ];
   const monthlyApplications = summary?.monthlyApplications || [];
